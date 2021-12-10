@@ -1,0 +1,25 @@
+{
+  "name": "gnsspm",
+  "version": "1.0.0",
+  "description": "GNSS Performance Monitor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senior-design-21-22/daad.git"
+  },
+  "author": "Derek Baker, Daniel Lipec, Aaron McKenna, Austin Mckibben",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/senior-design-21-22/daad/issues"
+  },
+  "homepage": "https://github.com/senior-design-21-22/daad#readme",
+  "dependencies": {
+    "d3": "^7.1.1",
+    "express": "^4.17.1",
+    "fast-csv": "^4.3.6",
+    "mariadb": "^2.5.5"
+  }
+}

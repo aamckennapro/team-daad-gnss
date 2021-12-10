@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style/home.css">
+        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> bootstrap-->
+        <script src="https://kit.fontawesome.com/4dc8169882.js" crossorigin="anonymous"></script> <!--Links icons-->
+        <script src="https://d3js.org/d3.v7.min.js"></script> <!--Import D3 for HTML-->
+        
+        <title>GNSS Performance Monitor</title>
+    </head>
+    <body>
+        <ul class="navbar" id="nav"> <!--navigation bar-->
+            <li class="title"><a href="index.html">GNSS Performance Monitor</a></li>
+            <li class="nav-item"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li class="nav-item"><a href="view/gps.html" class="dropbutton"><i class="fas fa-satellite-dish"></i> GPS <i class="fas fa-caret-down"></i></a></li>
+            <li class="nav-item"><a href="view/glonass.html"><i class="fas fa-satellite-dish"></i> GLONASS <i class="fas fa-caret-down"></i></a></li>
+            <li class="nav-item"><a href="view/galileo.html"><i class="fas fa-satellite-dish"></i> Galileo <i class="fas fa-caret-down"></i></a></li>
+            <li class="nav-item"><a href="view/beidou.html"><i class="fas fa-satellite-dish"></i> BeiDou <i class="fas fa-caret-down"></i></a></li>
+            <!--Interestingly enough, these need to be inserted backwards due to how the "float: right" style functions-->
+            <li class="right pad"><a href="about.html"><i class="fas fa-users"></i> About Us / FAQ</a></li>
+            <li class="right"><a href="data/plot.html"><i class="fas fa-drafting-compass"></i> Custom Plot Viewer</a></li>
+            <li class="right"><a href="data/download.html"><i class="fas fa-download"></i> Data Download</a></li>
+            <li class="right"><a href="data/historical.html"><i class="fas fa-calendar-alt"></i> Historical Data</a></li>
+            <a href="javascript:void(0);" class="icon">
+                <i class="fas fa-bars"></i>
+            </a>
+            <script src="src/responsive.js"></script> <!--Responsiveness changer-->
+        </ul> 
+        <!--Beginning paragraph-->
+        <div class="intro">
+            <h3>
+                Please note that all data is delayed by 24 hours before showing up on the website.
+                <br>
+                This website is located in Athens, Ohio in the United States. The Galileo and BeiDou constellations are not yet fully operational in our area.
+            </h3>
+        </div>
+        <br>
+
+        <div class="center date-view">
+            <label for="beg-date">Select date to view data:</label>
+            <input id="beg-date" type="date" value="2018-12-31" min="2018-12-31" max="2099-01-01"></input>
+            <input id="end-date" type="date" value="2018-12-31" min="2018-12-31" max="2099-01-01"></input>
+            <input class="date-submit" type="submit">
+            <script src="src/date.js"></script>
+        </div>
+        <br>
+        <!--These two divs are for the D3 graphs-->
+        <div class="heatmap">
+            <table class="center">
+                <tr style="border-bottom: 1px solid black">
+                    <td><a href="view/gps.html"><img src="img/heatmap_ph1.png"></a></td>
+                    <td style="border-left: 1px solid black"><a href="view/glonass.html"><img src="img/heatmap_ph2.png"></a></td>
+                </tr>
+                <tr>
+                    <td><a href="view/galileo.html"><img src="img/heatmap_ph3.png"></a></td>
+                    <td style="border-left: 1px solid black"><a href="view/beidou.html"><img src="img/heatmap_ph4.png"></a></td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+
+        <h3 class="center">Absolute Horizontal Position Error</h3>
+        <div class="center" style="display: flex; justify-content: center;"> <!--This container is used simply to center the selectButton-->
+            <label for="selectButton">Select a satellite to view:</label> <select id="selectButton"></select>
+        </div>
+        <input class="new-submit" type="submit">
+        <div class="center" id="horizontal_linegraph"></div>
+        <br>
+        <div class="center" id="horizontal_linegraph2"></div>
+        <br>
+        <div class="center" id="horizontal_linedate"></div>
+        <div id="vertical-linegraph"></div>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script type="module" src="src/line.js"></script> <!--Line graph-->
+        <script type="module" src="src/line2.js"></script> <!--Line graph-->
+        <script type="module" src="src/lineDate.js"></script> <!--Line graph-->
+        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>-->
+    </body>
+</html>

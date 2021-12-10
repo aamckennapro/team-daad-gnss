@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style/home.css">
+        <script src="https://kit.fontawesome.com/4dc8169882.js" crossorigin="anonymous"></script> <!--Links icons-->
+        <script src="https://d3js.org/d3.v7.min.js"></script> <!--Import D3 for HTML-->
+        <title>GNSS Performance Monitor</title>
+    </head>
+    <body>
+        <ul class="navbar" id="nav"> 
+            <li class="title"><a href="index.html">GNSS Performance Monitor</a></li>
+            <li class="nav-item"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li class="nav-item"><a href="view/gps.html" class="dropbutton"><i class="fas fa-satellite-dish"></i> GPS <i class="fas fa-caret-down"></i></a></li>
+            <li class="nav-item"><a href="view/glonass.html"><i class="fas fa-satellite-dish"></i> GLONASS <i class="fas fa-caret-down"></i></a></li>
+            <li class="nav-item"><a href="view/galileo.html"><i class="fas fa-satellite-dish"></i> Galileo <i class="fas fa-caret-down"></i></a></li>
+            <li class="nav-item"><a href="view/beidou.html"><i class="fas fa-satellite-dish"></i> BeiDou <i class="fas fa-caret-down"></i></a></li>
+            
+            <li class="right pad"><a href="about.html"><i class="fas fa-users"></i> About Us / FAQ</a></li>
+            <li class="right"><a href="data/plot.html"><i class="fas fa-drafting-compass"></i> Custom Plot Viewer</a></li>
+            <li class="right"><a href="data/download.html"><i class="fas fa-download"></i> Data Download</a></li>
+            <li class="right"><a href="data/historical.html"><i class="fas fa-calendar-alt"></i> Historical Data</a></li>
+        </ul>
+
+        <!--Beginning paragraph-->
+        <div class="intro">
+            <h1>
+                Welcome to the GNSS Positioning Performance Monitor.
+                <br>
+            </h1>
+            <h3>
+                Please note that all data is delayed by 24 hours before showing up on the website.
+            </h3>
+        </div>
+        <br>
+
+        <div class="center date-view">
+            <label for="beg-date">Select date to view data:</label>
+            <input id="beg-date" type="date" value="2018-12-31" min="2018-12-31" max="2099-01-01"></input>
+            <input id="end-date" type="date" value="2018-12-31" min="2018-12-31" max="2099-01-01"></input>
+            <input class="date-submit" type="submit" value="Update Graphs">
+            <script type="module" src="src/date.js"></script>
+        </div>
+        <br>
+        
+
+        <!-- Heatmap -->
+        <div class="img-fluid", id="heat"></div>
+        <div class="img-fluid", id="heat-compare"></div>
+        
+        <!-- <table class="center">
+            <tbody>
+                <tr style="border-bottom: 1px solid black">
+                    <td><div class="img-fluid", id="heat"></div></td>
+                    <td style="border-left: 1px solid black"><div class="img-fluid", id="heat"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="img-fluid", id="heat"></div></td>
+                    <td style="border-left: 1px solid black"><div class="img-fluid", id="heat"></div></td>
+                </tr>
+            </tbody>   
+        </table> -->
+
+        <br>
+
+        <h3 class="center">Absolute Horizontal Position Error</h3>
+        <div class="center" style="display: flex; justify-content: center;">
+            <input class="horizontal-submit" type="submit" value="Horizontal">
+            <input class="vertical-submit" type="submit" value="Vertical">
+            <input class="horizontal-toggle-brush" type="submit" value="Brush">
+        </div>
+
+        <div class="center" id="horizontal_linegraph"></div>
+        <br>
+        <h3 class="center">Absolute Vertical Position Error</h3>
+        <div class="center" style="display: flex; justify-content: center;">
+            <input class="vertical-toggle-brush" type="submit" value="Brush">
+        </div>
+        <div class= "center "id="vertical_linegraph"></div>
+        <br>
+        <br>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script type="module" src="src/horizontalLine.js"></script> <!--Horizontal error graph-->
+        <script type="module" src="src/verticalLine.js"></script> <!--Vertical error graph-->
+        <script src="src/heat.js"></script> <!-- Heatmap -->
+        </body>
+</html>

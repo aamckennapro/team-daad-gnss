@@ -1,0 +1,150 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+}
+
+.center {
+    text-align: center;
+    text-align: -webkit-center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.front {
+    z-index: 10;
+}
+
+h1, h2, h3 {
+    font-weight: 500;
+}
+
+h1, h2 {
+    font-size: 28px;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+.ignore {
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+}
+.ignore:hover {
+    color: white;
+}
+
+.intro {
+    text-align: center;
+    margin-top: 1rem;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.legend {
+    font-weight: 500;
+}
+
+li {
+    float: left;
+}
+
+li a { 
+    display: block;
+    color: #9a9da0;
+    text-align: center;
+    margin-top: .55rem;
+    margin-bottom: .55rem;
+    padding: 8px;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: #f8f9fa;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #343a40;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 1px solid #343a40; 
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+}
+
+.navbar .icon {
+    display: none;
+}
+
+.pad {
+    padding-right: 16px;
+}
+
+.right {
+    float: right;
+}
+
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.svg-content-responsive {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.title a { 
+    margin-top: .35rem;
+    margin-bottom: .35rem;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: white;
+    font-size: 20px;
+}
+
+#heat {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding-bottom: 0%;
+}
+
+#horizontal_linegraph {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding-bottom: 0%;
+}
+
+#vertical_linegraph {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding-bottom: 0%;
+}
